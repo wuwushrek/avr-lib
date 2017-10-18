@@ -1,2 +1,2 @@
 # avr-lib
-Some library for Atmega
+Some libraries for Atmega
