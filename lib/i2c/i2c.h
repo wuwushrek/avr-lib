@@ -101,7 +101,7 @@ uint8_t i2c_writeReg(uint8_t dev_addr, uint8_t reg_addr, uint16_t data_size, uin
 uint8_t i2c_readReg(uint8_t dev_addr, uint8_t reg_addr, uint16_t data_size, uint8_t *data);
 
 /**
- * terminates the datat transfer and releases the I2C bus
+ * terminates the data transfer and releases the I2C bus
  */
 void i2c_stop(void);
 
