@@ -10,8 +10,6 @@
 #define  F_I2C	100000UL	
 
 #include <inttypes.h>
-#include <avr/io.h>
-#include <util/twi.h>
 
 /**
  * Initialize the I2C interface. Need to be called only once
