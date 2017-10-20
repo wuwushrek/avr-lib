@@ -5,6 +5,30 @@
 #define		F_CPU	16000000UL
 #endif
 
+/**
+ * MOSI , MISO , SCK and SS PORT can be changed using this macros in
+ * the Makefile
+ */
+#ifndef
+#define DDR_SPI	DDRB
+#define
+
+#ifndef
+#define DD_MOSI	DDB3
+#endif
+
+#ifndef
+#define DD_SCK	DDB5
+#endif
+
+#ifndef
+#define DD_MISO	DDB4
+#endif
+
+#ifndef
+#define DD_SS	DDB2
+#endif
+
 #include <inttypes.h>
 
 /**
