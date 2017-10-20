@@ -10,23 +10,27 @@
  * the Makefile
  */
 #ifndef
-#define DDR_SPI	DDRB
-#define
-
-#ifndef
-#define DD_MOSI	DDB3
+#define DDR_SPI		DDRB
 #endif
 
 #ifndef
-#define DD_SCK	DDB5
+#define PORT_SPI	PORTB	
 #endif
 
 #ifndef
-#define DD_MISO	DDB4
+#define DD_MOSI		DDB3
 #endif
 
 #ifndef
-#define DD_SS	DDB2
+#define DD_SCK		DDB5
+#endif
+
+#ifndef
+#define DD_MISO		DDB4
+#endif
+
+#ifndef
+#define DD_SS		DDB2
 #endif
 
 #include <inttypes.h>
