@@ -8,12 +8,12 @@
 #include <inttypes.h>
 
 /**
- * Global spi_init 
- * @param lsbfirst   [description]
- * @param master     [description]
- * @param mode       [description]
- * @param clock_rate [description]
- * @param dblclkrate [description]
+ * Global SPI bus init
+ * @param lsbfirst   if 0: most significant bit is transmitted first
+ * @param master     if 1: initiatization as master else as slave
+ * @param mode       The 4 data transfer modes according to the datasheet
+ * @param clock_rate value between 0-3 ! It helps dividing clock freq by 4^(clock_rate+1)
+ * @param dblclkrate if 1: double the frequency of the SPI communication
  */
 void spi_init(	uint8_t lsbfirst,
 				uint8_t master, 
