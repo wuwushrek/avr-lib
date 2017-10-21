@@ -102,12 +102,12 @@ uint8_t i2c_readNack(void){
 }
 
 uint8_t i2c_receive(uint8_t dev_addr, uint16_t data_size, uint8_t *data){
-	if ( i2c_start( dev_addr | TWI_READ)){
+	if ( i2c_start( dev_addr | TW_READ)){
 		return 1;
 	}
 	uint16_t counter;
 	for (counter = 0 ; counter < (data_size - 1) ; counter++){
-		data[i] = i2c_readAck();
+		data[counter] = i2c_readAck();
 	}
 	data[data_size-1] = i2c_readNack();
 
@@ -117,7 +117,7 @@ uint8_t i2c_receive(uint8_t dev_addr, uint16_t data_size, uint8_t *data){
 }
 
 uint8_t i2c_transmit(uint8_t dev_addr, uint16_t data_size, uint8_t  *data){
-	if ( i2c_start ( dev_addr | TWI_WRITE )){
+	if ( i2c_start ( dev_addr | TW_WRITE )){
 		return 1;
 	}
 	uint16_t counter;
@@ -152,7 +152,7 @@ uint8_t i2c_readReg(uint8_t dev_addr, uint8_t reg_addr, uint16_t data_size, uint
 		return 1;
 	}
 	i2c_write(reg_addr);
-	if ( i2c_start(dev_addr | TWI_READ)){
+	if ( i2c_start(dev_addr | TW_READ)){
 		return 1;
 	}
 	uint16_t counter;
