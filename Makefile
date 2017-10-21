@@ -64,7 +64,7 @@ OBJDIR = .
 
 
 # List C source files here. (C dependencies are automatically generated.)
-SRC = $(TARGET).c ./lib/i2c.c ./lib/uart.c
+SRC = $(TARGET).c ./lib/i2c/i2c.c ./lib/uart/uart.c
 
 
 # List C++ source files here. (C dependencies are automatically generated.)
@@ -98,7 +98,7 @@ DEBUG = dwarf-2
 #     Each directory must be seperated by a space.
 #     Use forward slashes for directory separators.
 #     For a directory that has spaces, enclose it in quotes.
-EXTRAINCDIRS = 
+EXTRAINCDIRS = ./lib/i2c/ ./lib/uart/
 
 
 # Compiler flag to set the C Standard level.
@@ -111,6 +111,8 @@ CSTANDARD = -std=gnu99
 
 # Place -D or -U options here for C sources
 CDEFS = -DF_CPU=$(F_CPU)UL
+# Additional custom options
+CDEFS += -DUART_RX0_BUFFER_SIZE=16 -DUART_TX0_BUFFER_SIZE=16
 
 
 # Place -D or -U options here for ASM sources
